@@ -6,7 +6,7 @@ This site uses a pretty bare-bones installation of gridsome. All you need to do 
 yarn
 ```
 
-To run a local build: 
+To run a local development server:
 
 ```shell
 yarn develop
