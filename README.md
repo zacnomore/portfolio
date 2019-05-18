@@ -16,11 +16,10 @@ To learn more about developing with Gridsome, view their documentation: https://
 
 ## Deploy
 
-Just as easy.
+Like magic. Every branch goes, the master branch is the proper site.
 
 ```shell
-yarn build
-now
+git push
 ```
 
 ## Development
