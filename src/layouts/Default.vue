@@ -2,11 +2,12 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <g-link :to="{ name: 'home' }">Gridsome</g-link>
+        <g-link :to="{ name: 'home' }">Zachary Svoboda</g-link>
       </strong>
       <nav class="nav">
         <g-link class="nav__link" :to="{ name: 'home' }">Home</g-link>
-        <g-link class="nav__link" :to="{ name: 'about' }">About</g-link>
+        <g-link class="nav__link" :to="{ name: 'projects' }">Projects</g-link>
+        <g-link class="nav__link" :to="{ name: 'writing' }">Writing</g-link>
       </nav>
     </header>
     <slot/>

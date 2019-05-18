@@ -1,13 +1,40 @@
 <template>
   <Layout>
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    <h1>Hello, world!</h1>
-    <p>This is a simple example of a Gridsome site, deployed with <a href="https://zeit.co">Now</a>.</p>
-    <p>Visit the Now examples repository to see <a href="https://github.com/zeit/now-examples">the source of this example</a>.</p>
-    <g-link to="/about">See another page.</g-link>
+    <h1>Hello</h1>
+    <p>Welcome to my little site. There's not too much to look at right now but you're welcome to stay a while.</p>
+    <ul>
+      <li v-for="{ node } in $page.allBlogPost.edges" :key="node._id">
+        <router-link :to="node.path">
+          <h2 v-html="node.title"/>
+        </router-link>
+        <span v-html="node.date"/>
+        <div v-html="node.description"/>
+      </li>
+    </ul>
   </Layout>
 </template>
 
 <script>
 export default {}
 </script>
+
+<page-query>
+  query Home ($page: Int) {
+    allBlogPost (page: $page) {
+      edges {
+        node {
+          id
+          title
+          date (format: "D MMMM, YYYY")
+          path
+        }
+      }
+    }
+  }
+</page-query>
+
+<style lang="scss" scoped>
+  li {
+    list-style: none;
+  }
+</style>
