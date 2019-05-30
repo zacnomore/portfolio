@@ -15,6 +15,9 @@ export default {
   }
 }
 
+import Vector3 from '../../blog/svg-3d-projection/Vector3';
+console.log(new Vector3(1,2,3));
+
 </script>
 
 <page-query>
