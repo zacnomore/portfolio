@@ -1,8 +1,13 @@
 <template>
   <Layout>
     <h1>{{ $page.blogPost.title }}</h1>
-    <span>{{ $page.blogPost.date }}</span>
-    <div v-html="$page.blogPost.content" />
+    <span>{{ $page.blogPost.description }}</span>
+    <div class="codepen" data-prefill>
+
+      <pre data-lang="html"> 
+        <span>POC</span>
+      </pre>
+    </div>
   </Layout>
 </template>
 
@@ -14,9 +19,6 @@ export default {
     }
   }
 }
-
-import Vector3 from '../../blog/svg-3d-projection/Vector3';
-console.log(new Vector3(1,2,3));
 
 </script>
 
