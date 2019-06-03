@@ -2,12 +2,7 @@
   <Layout>
     <h1>{{ $page.blogPost.title }}</h1>
     <span>{{ $page.blogPost.description }}</span>
-    <div class="codepen" data-prefill>
-
-      <pre data-lang="html"> 
-        <span>POC</span>
-      </pre>
-    </div>
+    <div v-html="$page.blogPost.content"></div>
   </Layout>
 </template>
 
@@ -28,6 +23,7 @@ export default {
       title
       date (format: "D MMMM, YYYY")
       content
+      published
     }
   }
 </page-query>
