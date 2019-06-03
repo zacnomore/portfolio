@@ -3,7 +3,7 @@
     <h1>Hello</h1>
     <p>Welcome to my little site. There's not too much to look at right now but you're welcome to stay a while.</p>
     <ul>
-      <li v-for="{ node } in $page.allBlogPost.edges" :key="node._id">
+      <li v-for="{ node } in $page.allBlogPost.edges.filter(({ node }) => node.published)" :key="node._id">
         <router-link :to="node.path">
           <h2 v-html="node.title"/>
         </router-link>
@@ -27,6 +27,7 @@ export default {}
           title
           date (format: "D MMMM, YYYY")
           path
+          published
         }
       }
     }
