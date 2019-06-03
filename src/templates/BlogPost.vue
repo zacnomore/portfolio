@@ -7,6 +7,12 @@
 </template>
 
 <script>
+const greet = import("../../node_modules/@zacnomore/wasm-demo/wasm_demo");
+greet.then(greet => {
+  greet.greet("we finally made it what the heck");
+});
+
+
 export default {
     metaInfo () {
     return {
