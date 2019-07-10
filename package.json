@@ -9,9 +9,9 @@
     "now-dev": "gridsome develop -p $PORT"
   },
   "dependencies": {
-    "@gridsome/source-filesystem": "^0.4.1",
-    "@gridsome/transformer-remark": "^0.3.1",
-    "gridsome": "^0.3.0"
+    "@gridsome/source-filesystem": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.3.2",
+    "gridsome": "^0.6.6"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.6.1",
