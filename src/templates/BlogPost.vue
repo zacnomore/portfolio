@@ -26,7 +26,6 @@ export default {
   query BlogPost ($path: String!) {
     blogPost (path: $path) {
       title
-      date (format: "D MMMM, YYYY")
       content
     }
   }
