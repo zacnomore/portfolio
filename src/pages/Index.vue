@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <h1>Hello</h1>
-    <p>Welcome to my little site. There's not too much to look at right now but you're welcome to stay a while.</p>
+    <h1>Welcome</h1>
+    <p>I have a just a little bit of writing about code for you at the moment.</p>
     <ul>
       <li v-for="{ node } in $page.allBlogPost.edges" :key="node._id">
         <router-link :to="node.path">
@@ -24,6 +24,7 @@ export default {}
         node {
           id
           title
+          description
           path
         }
       }
