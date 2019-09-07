@@ -1,5 +1,5 @@
 ---
-title: What's Going On?
+title: What's Going On These Days?
 description: "Watching objects, events and systems without hurting yourself"
 slug: whats-going-on
 ---
@@ -67,7 +67,46 @@ So you've got your problems and it's time for solutions.
 
 ## Poor Matching of Message and Recipient
 
+You know that many
 
+
+```javascript
+const messageTypes = {
+  WEATHER: 'weather',
+  SALE: 'sale'
+}
+
+// We ask Charlie to mark up the envelopes
+// with the message type
+const charlie = {
+  getMessages: () => [
+    {
+      type: messageTypes.WEATHER,
+      body: `WARNING! Storm today at 2pm.`
+    },
+    {
+      type: messageTypes.SALE,
+      body: `Info: The butcher has a sale on steaks!`
+    }
+  ]
+}
+
+class Messenger {
+  // Only give the messages matching the given type
+  getMessages(type) {
+    return this._messages.filter(
+      m => m.type === type
+    );
+  }
+  /*...*/
+}
+
+// Our recipients now tell us what kinds
+// of messages they would like
+function deliverMessages (types) {
+  return types.flatMap(type => you.getMessages(type));
+}
+```
 
 ## Outdated Messages
 
