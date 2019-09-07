@@ -1,8 +1,7 @@
 <template>
   <Layout>
     <h1>{{ $page.blogPost.title }}</h1>
-    <span>{{ $page.blogPost.description }}</span>
-    <div v-html="$page.blogPost.content"></div>
+    <div v-html="$page.blogPost.content" />
   </Layout>
 </template>
 
@@ -27,7 +26,6 @@ export default {
   query BlogPost ($path: String!) {
     blogPost (path: $path) {
       title
-      date (format: "D MMMM, YYYY")
       content
       published
     }
