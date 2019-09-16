@@ -147,14 +147,26 @@ class SubscriptionBox {
   }
 }
 
+class Messenger {
+  todaysRoute = {};
+}
+
 // A lovely addition to your town!
 const coolBox = new SubscriptionBox();
 
 
-// Called for each delivery
-function deliverMessages () {
+function start() {
+  you.todaysRoute = getSubscriptionsByResident();
+}
 
-  
+// Changed! Called once each day
+function deliverMessages () {
+  // Now we'll skip any residents that don't have subscriptions!
+  for(let [resident, subscriptions] of Object.entries(you.todaysRoute)) {
+    resident.deliver(
+      subscriptions.flatMap(type => you.getMessages(type))
+    );
+  }
 }
 
 
