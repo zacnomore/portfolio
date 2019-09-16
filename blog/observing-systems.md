@@ -1,6 +1,6 @@
 ---
 title: The Complicated Life of A Messenger
-description: "Strategies for watching objects, events and systems without hurting yourself"
+description: "Strategies for watching events without hurting yourself"
 slug: strategies-for-observation
 ---
 
@@ -44,7 +44,9 @@ function start () {
 
 // Called for each delivery
 function deliverMessages () {
-  return you.getMessages();
+  neighborhood.forEach(resident => {
+    resident.giveMessage(you.getMessages());
+  })
 }
 
 // Called at 4 pm
@@ -92,7 +94,6 @@ class Messenger {
       m => m.type === type
     );
   }
-  /*...*/
 }
 
 // Our recipients now tell us what kinds
@@ -117,24 +118,45 @@ class SubscriptionBox {
     WEATHER: 'weather',
     SALE: 'sale'
   }
-  subscribe(residence, type) {
-    const subscription = {residence,type};
-    // Prevent duplicate subscriptions and
-    // ones to topics we don't have yet
-    if(_messageTypes[type] !== undefined &&
-      !this._subscriptions.includes(subscription)) {
-      this._subscriptions.push(subscription);
-    }
+
+  // Residents come at any time and subscribe to topics they would like
+  // These come into effect the following day
+  subscribe(resident, messageType) {
+    this._subscriptions.push({residence, messageType});
   }
 
-  unsubscribe(residence, type) {
+  unsubscribe(resident, messageType) {
     this._subscriptions.splice(
       this._subscriptions.findIndex(
-        sub => sub === {residence, type}
+        sub => sub === {resident, messageType}
       ), 1
     );
   }
+
+  getSubscribedTypes(resident) {
+    return this._subscriptions.filter(sub => sub.resident === resident);
+  }
+
+  getSubscriptionsByResident() {
+    return this._subscriptions.reduce((acc, cur) => {
+      const subs = acc[cur.resident] || [];
+      subs.push(cur.messageType);
+      acc[cur.resident] = curArray;
+      return acc;
+    }, {});
+  }
 }
+
+// A lovely addition to your town!
+const coolBox = new SubscriptionBox();
+
+
+// Called for each delivery
+function deliverMessages () {
+
+  
+}
+
 
 ```
 
