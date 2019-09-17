@@ -7,6 +7,9 @@ module.exports = {
         typeName: 'BlogPost',
         route: '/:slug'
       }
+    },
+    {
+      use: 'gridsome-plugin-purgecss'
     }
   ],
   transformers: {
