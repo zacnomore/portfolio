@@ -12,15 +12,21 @@ The trick here is that accessibility contains universal values and good practice
 
 # Aiding Design Process
 
+Accessible 
 Color contrast?
 Need to argue for simplicity? Less Clutter? Cognitive, mobility and visual disabilities would appreciate it too!
 Remembering to comunicate menus, ctas, forms. These things need names people will understand
+Considering affordances
 
 
 # Enhancing Development
 
-Semantic html for sanity
-Less sneaky css
+Often, code that is easily understood by developers is better understood by browsers as well. When an effort is made to learn and use native functionality, accessibility come free. This means semantic HTML and using the right tools for the job. 
+
+Semantic HTML is all about selecting elements that say what they mean. They build strong page structure which leads to screen reading and keyboard navigation functioning well. It's easier to read as a developer because the meaning exists inside the code but it's also easier for the browser to understand  apis. HTML5 introduced loads of fantastic elements but knowing what to avoid is _more_ important.
+
+Gone are the days of table layouts. Somewhat. 
+
 
 
 
