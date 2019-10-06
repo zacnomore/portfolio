@@ -1,4 +1,6 @@
 module.exports = {
+  siteName: 'Zachary Svoboda',
+  siteUrl: 'https://www.zacharysvoboda.com',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -10,6 +12,21 @@ module.exports = {
     },
     {
       use: 'gridsome-plugin-purgecss'
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        config: {
+          '/blog/*': {
+            changefreq: 'monthly',
+            priority: 0.5
+          },
+          '/contact': {
+            changefreq: 'monthly',
+            priority: 0.7
+          }
+        }
+      }
     }
   ],
   transformers: {
