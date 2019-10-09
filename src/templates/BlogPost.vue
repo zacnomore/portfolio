@@ -13,7 +13,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <page-query>
@@ -24,3 +23,11 @@ export default {
     }
   }
 </page-query>
+
+<style lang="scss">
+@media screen and (min-width: 680px) {
+  p {
+    font-size: 20px; 
+  }
+}
+</style>

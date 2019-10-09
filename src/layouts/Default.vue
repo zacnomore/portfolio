@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin: 0;
@@ -18,7 +18,7 @@ body {
 }
 
 .layout {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
