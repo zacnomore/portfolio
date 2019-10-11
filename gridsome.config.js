@@ -11,9 +11,6 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-purgecss'
-    },
-    {
       use: '@gridsome/plugin-sitemap',
       options: {
         config: {
