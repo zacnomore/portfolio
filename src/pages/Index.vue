@@ -1,39 +1,30 @@
 <template>
-  <Layout>
-    <h1>Welcome</h1>
-    <p>I have a just a little bit of writing about code for you at the moment.</p>
-    <ul>
-      <li v-for="{ node } in $page.allBlogPost.edges" :key="node._id">
-        <router-link :to="node.path">
-          <h2 v-html="node.title"/>
-        </router-link>
-        <div v-html="node.description"/>
-      </li>
-    </ul>
-  </Layout>
+    <div>
+      <header>
+        <h1>Zachary Svoboda</h1>
+        <p>{{subtitle}}</p>
+      </header>
+    </div>
 </template>
 
 <script>
-export default {}
-</script>
+export default {
+  data: function() {
+    return {
+      subtitle: this.randomizeText('Test')
+    }
+  },
+  methods: {
+    randomizeText(text) {
+      return text.split('').map(value => this.randomizeLetter(value)).join('');
+    },
 
-<page-query>
-  query Home ($page: Int) {
-    allBlogPost (page: $page) {
-      edges {
-        node {
-          id
-          title
-          description
-          path
-        }
-      }
+    randomizeLetter(letter) {
+      return Math.random() > .5 ? letter.toUpperCase() : letter.toLowerCase();
     }
   }
-</page-query>
+}
+</script>
 
 <style lang="scss" scoped>
-  li {
-    list-style: none;
-  }
 </style>
