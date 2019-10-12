@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Welcome</h1>
+    <h1>Writing</h1>
     <p>I have a just a little bit of writing about code for you at the moment.</p>
     <ul>
       <li v-for="{ node } in $page.allBlogPost.edges" :key="node._id">
@@ -33,6 +33,10 @@ export default {}
 </page-query>
 
 <style lang="scss" scoped>
+  ul {
+    padding: 0 10px;
+  }
+
   li {
     list-style: none;
   }

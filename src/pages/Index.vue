@@ -1,10 +1,10 @@
 <template>
-    <div>
-      <header>
-        <h1>Zachary Svoboda</h1>
-        <p>{{subtitle}}</p>
-      </header>
-    </div>
+  <Layout>
+    <header>
+      <h1>Zachary Svoboda</h1>
+    </header>
+    
+  </Layout>
 </template>
 
 <script>
