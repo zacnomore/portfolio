@@ -2,6 +2,7 @@
 title: The Complicated Life of A Messenger
 description: "Strategies for watching events without hurting yourself"
 slug: strategies-for-observation
+date: 2019-09-07
 ---
 
 Imagine that you get a new job as a messenger for your local neighborhood. Every day you get a list messages to share from Charlie the news man. He's a nice guy but boy does he have a lot of messages for you to share. From 8 am to 4 pm every day you go door to door in the neighborhood to inform people of an incoming storm or a sale at the local butcher shop. People enjoy them... for the most part.

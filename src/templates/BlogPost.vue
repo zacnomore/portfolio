@@ -27,7 +27,7 @@ export default {
 <style lang="scss">
 @media screen and (min-width: 680px) {
   p {
-    font-size: 20px; 
+    font-size: 18px; 
   }
 }
 </style>
