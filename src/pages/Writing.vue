@@ -23,7 +23,11 @@ export default {}
 
 <page-query>
   query Home ($page: Int) {
-    allBlogPost (page: $page) {
+    allBlogPost (page: $page, filter: {
+      published: {
+        eq: true
+      }
+    }) {
       edges {
         node {
           id
@@ -32,6 +36,7 @@ export default {}
           path
           timeToRead
           date (format: "MMMM D. YYYY")
+          published
         }
       }
     }
@@ -96,3 +101,4 @@ export default {}
     }
   }
 </style>
+ 

@@ -3,6 +3,7 @@ title: Extending pre-existing types in TypeScript
 description: "Exercising TypeScript generics to build new functionality into pre-existing types."
 slug: expanding-types-unobtrusively
 date: 2019-10-08
+published: true
 ---
 
 _If you're in Angular reactive or template forms are a much better option. This is just an exploration of typescript._
