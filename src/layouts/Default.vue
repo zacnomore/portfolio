@@ -50,10 +50,11 @@ header.navigation {
   align-items: center;
   padding: 10px 20px;
   height: 40px;
-  background-color: rgba($secondary-background, .8);
+  background-color: rgba($secondary-background, .85);
   border-bottom: .1px solid $tertiary-background;
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 nav > * {
