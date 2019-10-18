@@ -45,6 +45,7 @@ export default {}
 
 <style lang="scss" scoped>
   $border-size: 1px;
+  $border-mask-size: 2px;
   main a {
     border: $border-size solid $secondary-foreground;
     border-radius: 2px;
@@ -58,10 +59,10 @@ export default {}
     position: relative;
 
     clip-path: polygon( 
-      calc(0% + #{$border-size}) calc(0% + #{$border-size}), /* top left */
-      calc(100% - #{$border-size}) calc(0% + #{$border-size}), /* top right */
-      calc(100% - #{$border-size}) calc(100% - #{$border-size}), /* bottom right */
-      calc(0% + #{$border-size}) calc(100% - #{$border-size}) /* bottom left */
+      calc(0% + #{$border-mask-size}) calc(0% + #{$border-mask-size}), /* top left */
+      calc(100% - #{$border-mask-size}) calc(0% + #{$border-mask-size}), /* top right */
+      calc(100% - #{$border-mask-size}) calc(100% - #{$border-mask-size}), /* bottom right */
+      calc(0% + #{$border-mask-size}) calc(100% - #{$border-mask-size}) /* bottom left */
     );
 
     &:hover {

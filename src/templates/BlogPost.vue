@@ -30,4 +30,8 @@ export default {
     font-size: 18px; 
   }
 }
+
+img {
+  width: 100%;
+}
 </style>
