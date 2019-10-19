@@ -2,8 +2,7 @@
   <div>
     <header class="navigation">
       <nav>
-        <g-link to='/'>Home</g-link>
-        <g-link to='/writing/'>Writing</g-link>
+        <!-- <g-link to='/writing/'>Writing</g-link> -->
         <!-- <g-link to='/contact/'>Contact</g-link> -->
       </nav>
       <nav>
@@ -17,6 +16,10 @@
 </template>
 
 <style lang="scss">
+html, body, #app {
+  height: 100%;
+}
+
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin: 0;
