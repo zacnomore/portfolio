@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <header>
-      <h1>Writing</h1>
-      <p>I have a just a little bit of writing about code for you at the moment.</p>
+      <h1>Projects</h1>
+      <p></p>
     </header>
     <main>
       <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"

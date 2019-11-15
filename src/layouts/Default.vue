@@ -4,6 +4,7 @@
       <nav>
         <g-link to='/'>Home</g-link>
         <g-link to='/writing/'>Writing</g-link>
+        <g-link to='/projects/'>Projects</g-link>
         <!-- <g-link to='/contact/'>Contact</g-link> -->
       </nav>
       <nav>
