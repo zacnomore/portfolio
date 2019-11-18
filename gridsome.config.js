@@ -25,6 +25,13 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: './projects/**/*.md',
+        typeName: 'ProjectPost'
+      }
+    },
+    {
       use: '@gridsome/plugin-sitemap',
       options: {
         config: {

@@ -5,8 +5,8 @@
       <p></p>
     </header>
     <main>
-      <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
-        :path="path" 
+      <Card v-for="{ node } in $page.allProjectPost.edges" :key="node._id"
+        :path="node.path" 
         :id="node.id"
         :title="node.title"
         :timeToRead="node.timeToRead" 
@@ -17,12 +17,17 @@
 </template>
 
 <script>
-export default {}
+import Card from '~/components/Card.vue'
+export default {
+  components: {
+    Card
+  }
+}
 </script>
 
 <page-query>
   query Home ($page: Int) {
-    allBlogPost (page: $page, filter: {
+    allProjectPost (page: $page, filter: {
       published: {
         eq: true
       }
