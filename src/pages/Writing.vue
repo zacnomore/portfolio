@@ -6,7 +6,7 @@
     </header>
     <main>
       <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
-        :path="path" 
+        :path="node.path" 
         :id="node.id"
         :title="node.title"
         :timeToRead="node.timeToRead" 
@@ -17,7 +17,12 @@
 </template>
 
 <script>
-export default {}
+import Card from '~/components/Card.vue';
+export default {
+  components: {
+    Card
+  }
+}
 </script>
 
 <page-query>
