@@ -33,8 +33,12 @@ a {
   text-decoration: none;
 
   &:hover,
-  &.active--exact {
+  &.active {
     text-decoration: underline;
+  }
+
+  &:first-of-type:not(.active--exact) {
+    text-decoration: unset;
   }
 }
 
