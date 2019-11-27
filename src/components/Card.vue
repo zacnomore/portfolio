@@ -2,10 +2,10 @@
   <g-link :to="path">
     <h2 v-html="title"/>
     <div v-html="description">
-      <div class="meta">
-        <span v-if="timeToRead">{{timeToRead}} minute read</span>
-        <span v-if="date">Posted on {{date}}</span>
-      </div>
+    </div>
+    <div class="meta">
+      <span v-if="timeToRead">{{timeToRead}} minute read</span>
+      <span v-if="date">Posted on {{date}}</span>
     </div>
   </g-link>
 </template>

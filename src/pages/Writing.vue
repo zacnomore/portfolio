@@ -11,6 +11,7 @@
         :title="node.title"
         :timeToRead="node.timeToRead" 
         :description="node.description"
+        :date="node.date"
       />
     </main>
   </Layout>
