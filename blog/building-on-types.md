@@ -59,7 +59,7 @@ export class FormService {
 
 
 // This is the magic. For each key [Property in base type], there's a Field of the type of the property in the base type.
-// T[P] accesses the type of P rather that using just P which would give it's key instead
+// T[P] accesses the type of P rather that using just P which would give its key instead
 export type Form<T> = {
   [P in keyof T]: Field<T[P]>;
 };
