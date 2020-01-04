@@ -1,5 +1,0 @@
-{
-    "name":"portfolio",
-    "version":2,
-    "alias": "zacharysvoboda.com",
-    "builds":[{"src":"package.json","use":"@now/static-build"}]}

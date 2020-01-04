@@ -1,18 +1,22 @@
 ---
-title: What's Going On?
-description: "Watching objects, events and systems without hurting yourself"
-slug: whats-going-on
+title: The Complicated Life of A Messenger
+description: "Strategies for watching events without hurting yourself"
+slug: strategies-for-observation
+date: 2019-09-07
+published: true
 ---
 
 Imagine that you get a new job as a messenger for your local neighborhood. Every day you get a list messages to share from Charlie the news man. He's a nice guy but boy does he have a lot of messages for you to share. From 8 am to 4 pm every day you go door to door in the neighborhood to inform people of an incoming storm or a sale at the local butcher shop. People enjoy them... for the most part.
+
+## Polling
 
 ```javascript
 // Don't worry how he gets his messages,
 // we'll focus on delivery for now
 const charlie = {
   getMessages: () => [
-    `WARNING! Storm today at 2pm.`,
-    `Info: The butcher has a sale on steaks!`
+    `Kite flying contest tomorrow at noon`,
+    `The butcher has a sale on steaks!`
   ]
 }
 
@@ -44,7 +48,9 @@ function start () {
 
 // Called for each delivery
 function deliverMessages () {
-  return you.getMessages();
+  neighborhood.forEach(resident => {
+    resident.giveMessage(you.getMessages());
+  })
 }
 
 // Called at 4 pm
@@ -53,27 +59,113 @@ function end () {
 }
 ```
 
-Sometimes the message isn't quite right. You come to tell people about the coming storm but it's already raining at their house. Or you share the news of the butcher shop sale with Sal even though you know he's vegetarian.vAfter doing this day-in and day-out you start to wonder if there's a better way. You could go to your boss but you need a good pitch, what could you change?
+There's some problems though. When you told Sal about the fun at the butcher shop he was less than interested. *He's a vegetarian.* Also, Stanley is very sour on the whole kite thing and he does not want to talk about it. It was alright for a first day but you wonder if there's room for improvement so you sit down and think about the problems you've seen:
 
-So you sit down and make a list of the problems you've seen. It looks a little something like this:
+You decide to visit your boss's office after work to make some suggestions.
 
-- Poor matching of message and recipient
-- Busy recipient
-- Outdated Messages
-- Poor ordering of messages
-- More messages than can be delivered
+## Pub Sub
 
-So you've got your problems and it's time for solutions.
+You've figured out that many people in your neighborhood only care about certain kinds of messages. Rather than giving them every message you can ask which topics they're interested in and give only messages under those topics. You pitch the following proposal:
 
-## Poor Matching of Message and Recipient
+```javascript
+const messageTypes = {
+  EVENT: 'event',
+  SALE: 'sale'
+}
+
+// We ask Charlie to mark up the envelopes
+// with the message type
+const charlie = {
+  getMessages: () => [
+    {
+      type: messageTypes.EVENT,
+      body: `Kite flying contest tomorrow at noon.`
+    },
+    {
+      type: messageTypes.SALE,
+      body: `Info: The butcher has a sale on steaks!`
+    }
+  ]
+}
+
+class Messenger {
+  // Only give the messages matching the given type
+  getMessages(type) {
+    return this._messages.filter(
+      m => m.type === type
+    );
+  }
+}
+
+// Our recipients now tell us what kinds
+// of messages they would like
+function deliverMessages (types) {
+  return types.flatMap(type => you.getMessages(type));
+}
+```
+
+You boss is intrigued but has some feedback for you. She points out that you're adding some cost to the department as now you and Charlie need to coordinate about what kinds of messages there are. She also notes that residents have offloaded the filtering to you so now you're slowing down and wonders if you'll be able to move as fast. She says that you're introducing complexity without a meaningful optimization.
+
+What a weird thing to say.
+
+You have an idea though. What if residents submitted subscriptions to you so that you only visit houses that you have messages for?
+
+You make the following amendments:
+
+```javascript
+class SubscriptionBox {
+  _subscriptions = [];
+  _messageTypes = {
+    WEATHER: 'weather',
+    SALE: 'sale'
+  }
+
+  // Residents come at any time and subscribe to topics they would like
+  // These come into effect the following day
+  subscribe(resident, messageType) {
+    this._subscriptions.push({residence, messageType});
+  }
+
+  unsubscribe(resident, messageType) {
+    this._subscriptions.splice(
+      this._subscriptions.findIndex(
+        sub => sub === {resident, messageType}
+      ), 1
+    );
+  }
+
+  getSubscribedTypes(resident) {
+    return this._subscriptions.filter(sub => sub.resident === resident);
+  }
+
+  getSubscriptionsByResident() {
+    return this._subscriptions.reduce((acc, cur) => {
+      const subs = acc[cur.resident] || [];
+      subs.push(cur.messageType);
+      acc[cur.resident] = curArray;
+      return acc;
+    }, {});
+  }
+}
+
+class Messenger {
+  todaysRoute = {};
+}
+
+// A lovely addition to your town!
+const coolBox = new SubscriptionBox();
 
 
+function start() {
+  you.todaysRoute = getSubscriptionsByResident();
+}
 
-## Outdated Messages
+function deliverMessages () {
+  neighborhood
+  .filter(you.todaysRoute.hasOwnProperty) // We'll skip any residents that don't have mail!
+  .forEach(resident => {
+    resident.giveMessage(you.getMessages());
+}
+```
 
-You think about it for a while and realize that there's only two kinds of outdated messages. Some need cancelled while the others just need updated. When an event happens like a parade through town, this message becomes outdated at a certain time and then it can be discarded. That's not so tough, you can mark the envelope with instructions of when to discard it.
-
-
-
-
-This post is in-progress! Thanks for visiting.
+It's a wonderful success! People are getting their mail earlier because you're moving faster and they have less junk mail to go through. Everyone is happy except Charlie who now has to categorize all the messages. He's grumbles something about how you could figure out who to deliver to based on content instead of making him mark all the topics himself but that's for another day.
