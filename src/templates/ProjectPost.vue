@@ -2,8 +2,8 @@
   <Layout>
     <h1>{{ $page.projectPost.title }}</h1>
     <div class="links">
-      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">Code</a>
-      <a v-if="$page.projectPost.demo" target="_blank" :href="$page.projectPost.demo">Demo</a>
+      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">See the Code</a>
+      <a v-if="$page.projectPost.site" target="_blank" :href="$page.projectPost.site">View Site</a>
     </div>
     <g-image :src="$page.projectPost.screenshot"></g-image>
     <h2>Technologies Used</h2>
@@ -35,7 +35,7 @@ export default {
       title
       content
       repository
-      demo
+      site
       technologies
     }
   }
