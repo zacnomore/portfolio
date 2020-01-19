@@ -2,7 +2,7 @@
   <Layout>
     <h1>{{ $page.projectPost.title }}</h1>
     <div class="links">
-      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">See the Code</a>
+      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">See Code</a>
       <a v-if="$page.projectPost.site" target="_blank" :href="$page.projectPost.site">View Site</a>
     </div>
     <g-image :src="$page.projectPost.screenshot"></g-image>
