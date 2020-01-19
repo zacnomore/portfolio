@@ -1,7 +1,6 @@
 <template>
   <Layout>
-    <header>
-    </header>
+    <header>Hello! I'm Zac Svoboda</header>
     
   </Layout>
 </template>

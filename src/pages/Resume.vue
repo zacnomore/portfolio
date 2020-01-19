@@ -1,6 +1,6 @@
 <template>
   <Layout>
-       
+       <a href="/resume.pdf" download>Download PDF</a>
   </Layout>
 </template>
 

@@ -5,6 +5,7 @@
         <g-link to='/'>Home</g-link>
         <g-link to='/writing/'>Writing</g-link>
         <g-link to='/projects/'>Projects</g-link>
+        <g-link to='/resume/'>Resume</g-link>
         <!-- <g-link to='/contact/'>Contact</g-link> -->
       </nav>
       <nav>
@@ -60,6 +61,7 @@ header.navigation {
   position: sticky;
   top: 0;
   z-index: 999;
+  margin-bottom: 20px;
 }
 
 nav > * {
