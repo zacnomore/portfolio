@@ -1,7 +1,10 @@
 <template>
   <Layout>
     <h1>{{ $page.projectPost.title }}</h1>
-    <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">Repository</a>
+    <div class="links">
+      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">Code</a>
+      <a v-if="$page.projectPost.demo" target="_blank" :href="$page.projectPost.demo">Demo</a>
+    </div>
     <g-image :src="$page.projectPost.screenshot"></g-image>
     <h2>Technologies Used</h2>
     <ul v-if="technologies">
@@ -32,12 +35,17 @@ export default {
       title
       content
       repository
+      demo
       technologies
     }
   }
 </page-query>
 
 <style lang="scss">
+.links a {
+  display: block;
+}
+
 @media screen and (min-width: 680px) {
   p {
     font-size: 18px; 
