@@ -14,7 +14,8 @@ module.exports = {
   siteName: 'Zachary Svoboda',
   siteUrl: 'https://www.zacharysvoboda.com',
   templates: {
-    BlogPost: '/writing/:slug'
+    BlogPost: '/writing/:slug',
+    ProjectPost: '/project/:slug'
   },
   plugins: [
     {
