@@ -5,7 +5,7 @@ slug: pwa-podcatcher
 date: 2019-11
 technologies: Angular, TypeScript, PWA, Angular Material, IDB, RxJS
 repository: https://github.com/zacnomore/pwa-podcatcher
-demo: https://pwa-podcatcher-nine-black.now.sh/
+site: https://pwa-podcatcher-nine-black.now.sh/
 published: true
 ---
 
