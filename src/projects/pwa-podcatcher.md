@@ -37,3 +37,9 @@ RxJS observables provide single source of truth, always up to date view models f
 > While a redux-style solution like NGRX could just as easily maintain that app state (not to mention be super cool and trendy), I wanted to spin up something smaller for a couple reasons. I wanted to maintain focus on the core technologies and build those systems on my own to build the best understanding. The store persistence was one of those places. Additionally, for an app of this size that seemed to be a sledgehammer for a nail.
 
 I utilized the Material component library for this project as I didn't want to get too caught up in the UI. The focus here is on the new UX possibilities of PWAs, not how cool I can style my buttons.
+
+## What I learned
+
+While I enjoyed delving deeper into some of the most interesting client-side tech, I actually spent a lot of time thinking about state management. I wanted to fully utilize the data once it had arrived so I worked hard to share it as much as possible. I felt that using a state management solution would detract from the focus and the general approach of [lifting state up](https://reactjs.org/docs/lifting-state-up.html) in the component hierarchy wouldn't properly share the data like I was hoping to. I made a custom store for sharing across routes and a thoroughly designed state reading system for managing the `Audio` instance.
+
+I emerged with an understanding of the state management problem in general but not a strong opinion on the solutions yet. I expect to search for more answers on this for a while, I'm not very pleased with Flux or its alternatives.
