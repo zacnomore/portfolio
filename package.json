@@ -13,9 +13,9 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
+    "graphql": "^14.5.8",
     "gridsome": "^0.7.12",
-    "normalize.css": "^8.0.1",
-    "graphql": "^14.5.8"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.6.2",
