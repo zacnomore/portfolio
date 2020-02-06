@@ -1,6 +1,6 @@
 ## Setup
 
-This site uses a pretty bare-bones installation of gridsome. All you need to do to get everything together is:
+This site is a JAMstack built with gridsome. All you need to do to get dependencies setup is:
 
 ```shell
 yarn
@@ -12,11 +12,9 @@ To run a local development server:
 yarn develop
 ```
 
-To learn more about developing with Gridsome, view their documentation: https://gridsome.org/docs
-
 ## Deploy
 
-Like magic. Every branch goes, the master branch is the proper site.
+Like magic, every branch goes. The master branch is prod.
 
 ```shell
 git push
@@ -24,5 +22,5 @@ git push
 
 ## Development
 
-There's a little bit of work to get a handsome dev environment and it's a bit dependent on platform. I'm generally working on this with VS Code on a unixy system.
+There's a little bit of work to get a handsome dev environment and it's a bit dependent on platform. I'm generally working on this with VS Code on a unixy system, sorry if you have trouble on Windows!
 The normal Vue tools are sufficient for most of it, Vetur. To get that last 10% of goodness will take substantially more work though. Refer to [the docs.](https://gridsome.org/docs/dev-tools/)
