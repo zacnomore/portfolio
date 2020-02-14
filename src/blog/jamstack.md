@@ -6,7 +6,7 @@ date: 2019-02-05
 published: true
 ---
 
-Static site generators are all the rage now but in the beginning there were only static sites. It was difficult to compare native applications to the web, the limitations were obvious to users and difficult to build around.  Enter jQuery, Ajax and the whole business of client-side logic. Add some years of growth in functionality (and expectations!) and you get the single page app and modern frameworks. Performance optimization inevitably led to AOT compilation, server side rendering, and DOM hydration to reduce the real and apparent load speed.
+Static site generators are all the rage now but in the beginning there were only static sites. It was difficult to compare native applications to the web, the limitations were obvious to users and difficult to build around.  (This seems like a good spot to talk about DHTML but it really doesn't matter too much to the point. Those static pages became sorta kinda dynamic by making the underlying static systems _able_ to be dynamic.) Enter jQuery, Ajax and the whole business of client-side logic. Add some years of growth in functionality (and expectations!) and you get the single page app and modern frameworks. Performance optimization inevitably led to AOT compilation, server side rendering, and DOM hydration to reduce the real and apparent load speed.
 
 So why would we want to go back? There's a couple key distinctions here, the static sites we make now are radically different. In the past a static site lacked any dynamic content and interaction was fairly lackluster. In order to be highly dynamic and interactive you needed to trade off for performance with a thick client. We don't need to make that trade anymore.
 
