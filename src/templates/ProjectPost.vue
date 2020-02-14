@@ -2,15 +2,15 @@
   <Layout>
     <h1>{{ $page.projectPost.title }}</h1>
     <div class="links">
-      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">See Code</a>
-      <a v-if="$page.projectPost.site" target="_blank" :href="$page.projectPost.site">View Site</a>
+      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">View the Source Code</a>
+      <a v-if="$page.projectPost.site" target="_blank" :href="$page.projectPost.site">Visit Live Site</a>
     </div>
     <g-image :src="$page.projectPost.screenshot"></g-image>
     <h2>Technologies Used</h2>
     <ul v-if="technologies">
       <li v-for="tech in technologies" :key="tech">{{tech}}</li>
     </ul>
-    <div v-html="$page.projectPost.content" />
+    <div class="content" v-html="$page.projectPost.content" />
   </Layout>
 </template>
 
@@ -54,5 +54,12 @@ export default {
 
 img {
   width: 100%;
+}
+
+.content {
+  padding-bottom: 100px;
+  @media screen and (min-width: 680px) {
+    padding-bottom: 200px;
+  }
 }
 </style>
