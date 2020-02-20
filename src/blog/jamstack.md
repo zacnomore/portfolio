@@ -2,7 +2,7 @@
 title: Why We're Rendering Static Pages Again (JAMstack isn't ASP)
 description: A condensed history of the web and how we're using the oldest web tech in a very new way. 
 slug: why-jamstack-is-actually-new
-date: 2019-02-05
+date: 2020-02-05
 published: true
 ---
 
