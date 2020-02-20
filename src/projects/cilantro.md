@@ -21,7 +21,7 @@ From time to time I do contract projects, I especially enjoy working with local 
 
 ## How
 
-This is using Gridsome, a JAMstack framework, deployed onto Zeit. It's completely composed of static files hosted on the Zeit CDN as it didn't need any custom backend services. This site especially benefits from image compression and lazy loading as the design completely covers the page in images. 
+This is using Gridsome, a JAMstack framework, deployed onto Zeit. It's completely composed of static files hosted on the Zeit CDN as it didn't need any custom backend services. This site especially benefits from image compression and lazy loading as the design completely covers the page in images.
 
 ## What I learned
 
