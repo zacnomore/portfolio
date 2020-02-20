@@ -5,7 +5,7 @@ slug: cilantro
 date: 2020-1
 technologies: Gridsome, Vue, Zeit
 repository: https://github.com/zacnomore/cilantro-site
-site: https://pwa-podcatcher-nine-black.now.sh/
+site: https://cilantrorestaurantvt.com/
 published: true
 ---
 
