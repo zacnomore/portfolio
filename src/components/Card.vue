@@ -25,8 +25,8 @@ export default {
     border-radius: 2px;
     cursor: pointer;
     display: block;
-    margin: 20px 0;
-    padding: 10px;
+    margin: 10px 0;
+    padding: 10px 20px;
     position: relative;
     text-decoration: none;
     transition: all .2s ease-out;

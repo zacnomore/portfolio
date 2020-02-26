@@ -25,6 +25,11 @@ export default {
 </page-query>
 
 <style lang="scss">
+main {
+  max-width: 720px;
+  margin: auto;
+}
+
 @media screen and (min-width: 680px) {
   p {
     font-size: 18px; 

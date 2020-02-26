@@ -2,14 +2,13 @@
   <div>
     <header class="navigation">
       <nav>
-        <g-link to='/'>Home</g-link>
-        <g-link to='/writing/'>Writing</g-link>
+        <g-link class="home" to='/'>Zac Svoboda</g-link>
+      </nav>
+      <nav>
+        <g-link to='/articles/'>Articles</g-link>
         <g-link to='/projects/'>Projects</g-link>
         <g-link to='/resume/'>Resume</g-link>
         <!-- <g-link to='/contact/'>Contact</g-link> -->
-      </nav>
-      <nav>
-        <a href="https://github.com/zacnomore">Github</a>
       </nav>
     </header>
     <main>
@@ -23,6 +22,7 @@ body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 1.15rem;
   line-height: 1.5;
   min-height: 100vh;
   background-color: $secondary-background;
@@ -37,17 +37,12 @@ a {
   &.active {
     text-decoration: underline;
   }
-
-  &:first-of-type:not(.active--exact) {
-    text-decoration: unset;
-  }
 }
 
 main {
-  max-width: 680px;
+  max-width: 980px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px 100px 20px;
 }
 
 header.navigation {
@@ -74,5 +69,10 @@ nav > * {
   &:last-child {
     margin-right: 0;
   }
+}
+
+
+.home:not(.active--exact) {
+  text-decoration: unset;
 }
 </style>
