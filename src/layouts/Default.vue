@@ -42,8 +42,7 @@ a {
 main {
   max-width: 980px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px 100px 20px;
 }
 
 header.navigation {
