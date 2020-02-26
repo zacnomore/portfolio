@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <header>
-      <h1>Writing</h1>
+      <h1>Articles</h1>
     </header>
     <main>
       <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"

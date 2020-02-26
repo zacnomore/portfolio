@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="writing">
-      <h2>Recent Writing</h2>
+      <h2>Recent Articles</h2>
       <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
         :path="node.path" 
         :id="node.id"
