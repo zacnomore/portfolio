@@ -26,7 +26,7 @@ export default {
 </script>
 
 <page-query>
-  query Home ($page: Int) {
+  query Writing ($page: Int) {
     allBlogPost (page: $page, filter: {
       published: {
         eq: true

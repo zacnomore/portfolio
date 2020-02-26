@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <div class="profile">
-      <g-image class="picture" src="~/assets/me.jpg" width="300"/>
+      <g-image class="picture" src="~/assets/me.jpg" width="300" alt="Zac as a child looking out over the Pacific ocean."/>
       <div class="description">
-        <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technology. </p>
+        <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technologies. </p>
         <nav>
           <a href="https://github.com/zacnomore">
             <g-image src="~/assets/github-icon.png" width="40"/>
@@ -12,34 +12,80 @@
           <a href="https://www.linkedin.com/in/zacharysvoboda/">
             <g-image src="~/assets/linkedin-icon.png" width="40"/>
           </a>
-
         </nav>
       </div>
+    </div>
+    <div class="writing">
+      <h2>Recent Writing</h2>
+      <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
+        :path="node.path" 
+        :id="node.id"
+        :title="node.title"
+        :timeToRead="node.timeToRead" 
+        :description="node.description"
+        :date="node.date"
+      />
     </div>
   </Layout>
 </template>
 
 <script>
+import Card from '~/components/Card.vue';
+
 export default {
+  components: {
+    Card
+  }
 }
 </script>
 
+
+<page-query>
+  query Home($page: Int) {
+    allBlogPost(
+      page: $page, 
+      filter: { 
+        published: { eq: true } 
+      }, 
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          title
+          description
+          path
+          timeToRead
+          date(format: "MMMM D. YYYY")
+          published
+        }
+      }
+    }
+  }
+</page-query>
+
 <style lang="scss" scoped>
-.profile {    
-  height: 80vh;
+.profile {
+  min-height: 40vh;
   display: flex;
   align-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  border-bottom: 1px solid $primary-foreground;
 
   .picture {
     border-radius: 200px;
+    height: 200px;
+    width: 200px;
 
+    @media screen and (min-width: 800px) {
+      width: unset;
+      height: unset;
+    }
   }
 
   .description {
-    margin-left: 40px;
-    padding: 40px 0;
+    padding: 40px;
     flex: 1;
     min-width: 300px;
     max-width: 500px;
@@ -50,6 +96,7 @@ export default {
 
   nav {
     display: flex;
+    justify-content: center;
 
     a {
       display: flex;
@@ -65,6 +112,9 @@ export default {
       }
     }
   }
+}
 
+.writing {
+  margin-top: 60px;
 }
 </style>
