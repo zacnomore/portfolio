@@ -2,7 +2,7 @@
   <div>
     <header class="navigation">
       <nav>
-        <g-link to='/'>Zac Svoboda</g-link>
+        <g-link class="home" to='/'>Zac Svoboda</g-link>
       </nav>
       <nav>
         <g-link to='/writing/'>Writing</g-link>
@@ -37,10 +37,6 @@ a {
   &.active {
     text-decoration: underline;
   }
-
-  &:first-of-type:not(.active--exact) {
-    text-decoration: unset;
-  }
 }
 
 main {
@@ -74,5 +70,10 @@ nav > * {
   &:last-child {
     margin-right: 0;
   }
+}
+
+
+.home:not(.active--exact) {
+  text-decoration: unset;
 }
 </style>
