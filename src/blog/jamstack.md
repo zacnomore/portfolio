@@ -12,8 +12,7 @@ So why would we want to go back? There's a couple key distinctions here, the sta
 
 Content can be dynamic to varying degrees. If you want content changing daily or even hourly its entirely possible to push out fresh builds in SSG. Following best practices of atomic deploys creates a seamless experience. If your content is changing by the minute or second, you're still in luck. Every imaginable service has been commoditized into an API, often free. We couldn't access content in this way for a long while and even when we could it certainly wasn't easy. Ajax has become `fetch`, `async`, and `await`.
 
-What was once the 50k inclusion of the Prototype:
-[source](http://prototypejs.org/learn/introduction-to-ajax.html);
+What was once the 50k inclusion of the [Prototype library](http://prototypejs.org/learn/introduction-to-ajax.html)
 
 ```js
 new Ajax.Request('/some_url', {
