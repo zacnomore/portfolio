@@ -127,6 +127,8 @@ export default {
 
       img {
         align-self: center;
+        height: 25px;
+        width: 25px;
       }
 
       &:hover {
