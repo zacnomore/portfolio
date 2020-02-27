@@ -6,12 +6,17 @@
         <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technologies. </p>
         <nav>
           <a href="https://github.com/zacnomore">
-            <g-image src="~/assets/github-icon.png" width="40"/>
+            <g-image src="~/assets/icons/github.svg" width="40"/>
           </a>
-          <a href="https://www.linkedin.com/in/zacharysvoboda/">✉</a>
+          <a href="mailto:cczac1@gmail.com">
+            <g-image src="~/assets/icons/mail.svg" width="40"/>
+          </a>
           <a href="https://www.linkedin.com/in/zacharysvoboda/">
-            <g-image src="~/assets/linkedin-icon.png" width="40"/>
+            <g-image src="~/assets/icons/linkedin.svg" width="40"/>
           </a>
+           <a href="/resume.pdf" download>
+            <g-image src="~/assets/icons/file-text.svg" width="40"/>
+           </a>
         </nav>
       </div>
     </div>
