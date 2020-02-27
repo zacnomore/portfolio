@@ -3,19 +3,23 @@
     <div class="profile">
       <g-image class="picture" src="~/assets/me.jpg" width="300" alt="Zac as a child looking out over the Pacific ocean."/>
       <div class="description">
-        <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technologies. </p>
+        <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technologies.</p>
         <nav>
           <a href="https://github.com/zacnomore">
-            <g-image src="~/assets/icons/github.svg" width="40"/>
+            <g-image src="~/assets/icons/github.svg" width="40" alt="GitHub Icon"/>
+            GitHub
           </a>
           <a href="mailto:cczac1@gmail.com">
-            <g-image src="~/assets/icons/mail.svg" width="40"/>
+            <g-image src="~/assets/icons/mail.svg" width="40" alt="Email Icon"/>
+            Email
           </a>
           <a href="https://www.linkedin.com/in/zacharysvoboda/">
-            <g-image src="~/assets/icons/linkedin.svg" width="40"/>
+            <g-image src="~/assets/icons/linkedin.svg" width="40" alt="LinkedIn Icon"/>
+            LinkedIn
           </a>
            <a href="/resume.pdf" download>
-            <g-image src="~/assets/icons/file-text.svg" width="40"/>
+            <g-image src="~/assets/icons/file-text.svg" width="40" alt="Document Icon"/>
+            Resume
            </a>
         </nav>
       </div>
@@ -40,6 +44,17 @@ import Card from '~/components/Card.vue';
 export default {
   components: {
     Card
+  },
+  metaInfo: {
+    title: 'Portfolio',
+    meta: [
+      {
+
+        key: 'description',
+        name: 'description',
+        content: 'Projects and writing from Zachary Svoboda, Software Developer '
+      }
+    ]
   }
 }
 </script>
@@ -73,8 +88,8 @@ export default {
 .profile {
   min-height: 40vh;
   display: flex;
-  align-content: center;
   justify-content: space-around;
+  align-content: center;
   flex-wrap: wrap;
   border-bottom: 1px solid $primary-foreground;
 
@@ -107,9 +122,12 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      text-align: center;
       margin-right: 10px;
-      font-size: 50px;
-      line-height: 50px;
+
+      img {
+        align-self: center;
+      }
 
       &:hover {
         text-decoration: none;
