@@ -34,7 +34,7 @@
         :description="node.description"
         :date="node.date"
       />
-      <g-link to="/writing">See More</g-link>
+      <g-link to="/articles">See More</g-link>
     </div>
   </Layout>
 </template>
