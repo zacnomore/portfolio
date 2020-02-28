@@ -24,7 +24,7 @@
         </nav>
       </div>
     </div>
-    <div class="writing">
+    <div class="articles">
       <h2>Recent Articles</h2>
       <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
         :path="node.path" 
@@ -35,6 +35,18 @@
         :date="node.date"
       />
       <g-link to="/articles">See More</g-link>
+    </div>
+    <div class="projects">
+      <h2>Recent Projects</h2>
+      <Card v-for="{ node } in $page.allProjectPost.edges" :key="node._id"
+        :path="node.path" 
+        :id="node.id"
+        :title="node.title"
+        :timeToRead="node.timeToRead" 
+        :description="node.description"
+        :date="node.date"
+      />
+      <g-link to="/projects">See More</g-link>
     </div>
   </Layout>
 </template>
@@ -64,6 +76,24 @@ export default {
 <page-query>
   query Home {
     allBlogPost(
+      limit: 3,
+      filter: { 
+        published: { eq: true } 
+      }
+    ) {
+      edges {
+        node {
+          id
+          title
+          description
+          path
+          timeToRead
+          date(format: "MMMM D. YYYY")
+          published
+        }
+      }
+    },
+    allProjectPost(
       limit: 3,
       filter: { 
         published: { eq: true } 
@@ -139,7 +169,7 @@ export default {
   }
 }
 
-.writing {
+.articles, .projects {
   margin-top: 60px;
 }
 </style>
