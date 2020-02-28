@@ -1,29 +1,47 @@
 <template>
   <Layout>
-    <h1>{{ $page.projectPost.title }}</h1>
+    <h1>{{ $page.currentPost.title }}</h1>
     <div class="links">
-      <a v-if="$page.projectPost.repository" target="_blank" :href="$page.projectPost.repository">View the Source Code</a>
-      <a v-if="$page.projectPost.site" target="_blank" :href="$page.projectPost.site">Visit Live Site</a>
+      <a v-if="$page.currentPost.repository" target="_blank" :href="$page.currentPost.repository">View the Source Code</a>
+      <a v-if="$page.currentPost.site" target="_blank" :href="$page.currentPost.site">Visit Live Site</a>
     </div>
-    <g-image :src="$page.projectPost.screenshot"></g-image>
+    <g-image :src="$page.currentPost.screenshot"></g-image>
     <h2>Technologies Used</h2>
     <ul v-if="technologies">
       <li v-for="tech in technologies" :key="tech">{{tech}}</li>
     </ul>
-    <div class="content" v-html="$page.projectPost.content" />
+    <div class="content" v-html="$page.currentPost.content" />
+    <PageNavigation :nextPost="nextPost" :previousPost="previousPost"/>
   </Layout>
 </template>
 
 <script>
+import PageNavigation from '~/components/PageNavigation.vue'
+
 export default {
-    metaInfo () {
+  components: {
+    PageNavigation
+  },
+  metaInfo () {
     return {
-      title: this.$page.projectPost.title
+      title: this.$page.currentPost.title
     }
   },
   computed: {
     technologies: function () {
-      return this.$page.projectPost && this.$page.projectPost.technologies && this.$page.projectPost.technologies.split(', ');
+      return this.$page.currentPost && this.$page.currentPost.technologies && this.$page.currentPost.technologies.split(', ');
+    },
+    allPostsEdges: function() {
+      return this.$page.allPosts.edges;
+    },
+    currentPostIndex: function() { 
+      return this.allPostsEdges.findIndex(edge => this.$page.currentPost.id === edge.node.id);
+    },
+    nextPost: function() {
+      return this.allPostsEdges[this.currentPostIndex - 1];
+    },
+    previousPost: function() {
+      return this.allPostsEdges[this.currentPostIndex + 1];
     }
   }
 }
@@ -31,12 +49,23 @@ export default {
 
 <page-query>
   query ProjectPost ($path: String!) {
-    projectPost (path: $path) {
+    currentPost: projectPost (path: $path) {
       title
       content
       repository
       site
-      technologies
+      technologies,
+      id
+    },
+
+    allPosts: allProjectPost {
+      edges {
+        node {
+          title,
+          path,
+          id
+        }
+      }
     }
   }
 </page-query>
