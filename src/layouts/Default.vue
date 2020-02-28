@@ -2,13 +2,11 @@
   <div>
     <header class="navigation">
       <nav>
-        <g-link class="home" to='/'>Zac Svoboda</g-link>
+        <g-link class="home" to='/'>Home</g-link>
       </nav>
       <nav>
         <g-link to='/articles/'>Articles</g-link>
         <g-link to='/projects/'>Projects</g-link>
-        <g-link to='/resume/'>Resume</g-link>
-        <!-- <g-link to='/contact/'>Contact</g-link> -->
       </nav>
     </header>
     <main>
