@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="profile">
-      <g-image class="picture" src="~/assets/me.jpg" width="300" alt="Zac as a child looking out over the Pacific ocean."/>
+      <GlitchImage imageURL="/me.jpg" class="picture"/>
       <div class="description">
         <p>Hello! I'm Zac Svoboda a software developer with a love for interactive technologies.</p>
         <nav>
@@ -53,10 +53,12 @@
 
 <script>
 import Card from '~/components/Card.vue';
+import GlitchImage from '~/components/GlitchImage.vue';
 
 export default {
   components: {
-    Card
+    Card,
+    GlitchImage
   },
   metaInfo: {
     title: 'Portfolio',
@@ -124,13 +126,14 @@ export default {
   border-bottom: 1px solid $primary-foreground;
 
   .picture {
-    border-radius: 200px;
     height: 200px;
     width: 200px;
+    z-index: 10;
+    border-radius: 200px;
 
     @media screen and (min-width: 800px) {
-      width: unset;
-      height: unset;
+      width: 300px;
+      height: 300px;
     }
   }
 

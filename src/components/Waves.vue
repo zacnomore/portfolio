@@ -1,5 +1,5 @@
 <template>
-<canvas class="waves"/>
+  <canvas class="waves"/>
 </template>
 
 <script>
