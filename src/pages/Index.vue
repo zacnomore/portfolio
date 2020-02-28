@@ -34,6 +34,7 @@
         :description="node.description"
         :date="node.date"
       />
+      <g-link to="/writing">See More</g-link>
     </div>
   </Layout>
 </template>
@@ -61,13 +62,12 @@ export default {
 
 
 <page-query>
-  query Home($page: Int) {
+  query Home {
     allBlogPost(
-      page: $page, 
+      limit: 3,
       filter: { 
         published: { eq: true } 
-      }, 
-      limit: 3
+      }
     ) {
       edges {
         node {
