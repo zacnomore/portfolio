@@ -19,9 +19,7 @@ export default {
     function draw(startMillis) {
       if(performance.now() > startMillis + glitchTime) {
         drawNormal();
-        console.log('Stop glitching');
         setTimeout(() => {
-          console.log('Start glitching')
           draw(performance.now());
         }, waitTime);
       } else {
