@@ -11,6 +11,7 @@
         :title="node.title"
         :timeToRead="node.timeToRead" 
         :description="node.description"
+        :date="node.date"
       />
     </main>
   </Layout>
@@ -39,7 +40,7 @@ export default {
           description
           path
           timeToRead
-          date (format: "MMMM D. YYYY")
+          date (format: "MMMM YYYY")
           published
         }
       }

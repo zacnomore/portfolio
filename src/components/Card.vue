@@ -5,7 +5,7 @@
     </div>
     <div class="meta">
       <span v-if="timeToRead">{{timeToRead}} minute read</span>
-      <span v-if="date">Posted on {{date}}</span>
+      <span v-if="date">{{date}}</span>
     </div>
   </g-link>
 </template>
