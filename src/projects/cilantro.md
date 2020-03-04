@@ -2,10 +2,11 @@
 title: Cilantro Restaurant Landing Page
 description: Local business landing page, real world JAMstack
 slug: cilantro
-date: 2020-1
+date: 2020-01
 technologies: Gridsome, Vue, Zeit
 repository: https://github.com/zacnomore/cilantro-site
 site: https://cilantrorestaurantvt.com/
+
 published: true
 ---
 
