@@ -2044,7 +2044,7 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001021:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001022.tgz#9eeffe580c3a8f110b7b1742dcf06a395885e4c6"
   integrity sha512-FjwPPtt/I07KyLPkBQ0g7/XuZg6oUkYBVnPHNj3VHJbOjmmJ/GdSo/GUY6MwINEQvjhP6WZVbX8Tvms8xh0D5A==
 
-canvas@^2.0.1:
+canvas@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/canvas/-/canvas-2.6.1.tgz#0d087dd4d60f5a5a9efa202757270abea8bef89e"
   integrity sha512-S98rKsPcuhfTcYbtF53UIJhcbgIAK533d1kJKMwsMwAIFgfd58MOyxRud3kktlzWiEkFliaJtvyZCBtud/XVEA==
@@ -4049,12 +4049,12 @@ github-slugger@^1.0.0:
   dependencies:
     emoji-regex ">=6.0.0 <=6.1.1"
 
-glitch-canvas@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/glitch-canvas/-/glitch-canvas-1.1.7.tgz#0849fb8fefb7b94a74c8e76c699bdb3d95cd717b"
-  integrity sha512-kmDMvTk1n0aWsOm1CnOxRSC30jNCjWYdEkvRiR5bnufNGbrxmwS/8f0lnlcikMDBW7I7KInLKJ7T2XpulFgiyw==
+glitch-canvas@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/glitch-canvas/-/glitch-canvas-1.1.8.tgz#2a594c5ba3b9a2295d3c9aff098dd31c237a5104"
+  integrity sha512-P6Ua3R4TMOovnLftKVu+9ic7zgCe/S6EUkJuP2pR/C7GS1Kf5q4xzxq2Q34GPhb81jq8xGOsjN5/KOmwmT6jVw==
   dependencies:
-    canvas "^2.0.1"
+    canvas "^2.6.1"
 
 glob-base@^0.3.0:
   version "0.3.0"
