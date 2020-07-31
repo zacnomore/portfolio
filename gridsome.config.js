@@ -39,10 +39,6 @@ module.exports = {
           '/blog/*': {
             changefreq: 'monthly',
             priority: 0.5
-          },
-          '/contact': {
-            changefreq: 'monthly',
-            priority: 0.7
           }
         }
       }
