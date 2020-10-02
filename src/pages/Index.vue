@@ -34,7 +34,7 @@
         :description="node.description"
         :date="node.date"
       />
-      <g-link to="/articles">See More</g-link>
+      <g-link class="see-more-link" to="/articles">See More Articles</g-link>
     </div>
     <div class="projects">
       <h2>Recent Projects</h2>
@@ -46,7 +46,7 @@
         :description="node.description"
         :date="node.date"
       />
-      <g-link to="/projects">See More</g-link>
+      <g-link class="see-more-link" to="/projects">See More Projects</g-link>
     </div>
   </Layout>
 </template>
@@ -118,7 +118,7 @@ export default {
 
 <style lang="scss" scoped>
 .profile {
-  min-height: 40vh;
+  min-height: 50vh;
   display: flex;
   justify-content: space-around;
   align-content: center;
