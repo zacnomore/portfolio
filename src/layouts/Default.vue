@@ -11,20 +11,12 @@
     </header>
     <main>
       <slot/>
-      <Waves/>
     </main>
   </div>
 </template>
 
 
 <script>
-import Waves from '~/components/Waves.vue';
-
-export default {
-  components: {
-    Waves
-  }
-}
 </script>
 
 <style lang="scss">
@@ -37,6 +29,8 @@ body {
   min-height: 100vh;
   background-color: $secondary-background;
   color: $primary-foreground;
+  background: $primary-background;
+
 }
 
 a {
