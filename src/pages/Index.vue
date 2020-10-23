@@ -24,18 +24,6 @@
         </nav>
       </div>
     </div>
-    <div class="articles">
-      <h2>Recent Articles</h2>
-      <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
-        :path="node.path" 
-        :id="node.id"
-        :title="node.title"
-        :timeToRead="node.timeToRead" 
-        :description="node.description"
-        :date="node.date"
-      />
-      <g-link class="see-more-link" to="/articles">See More Articles</g-link>
-    </div>
     <div class="projects">
       <h2>Recent Projects</h2>
       <Card v-for="{ node } in $page.allProjectPost.edges" :key="node._id"
@@ -47,6 +35,18 @@
         :date="node.date"
       />
       <g-link class="see-more-link" to="/projects">See More Projects</g-link>
+    </div>
+    <div class="articles">
+      <h2>Recent Articles</h2>
+      <Card v-for="{ node } in $page.allBlogPost.edges" :key="node._id"
+        :path="node.path" 
+        :id="node.id"
+        :title="node.title"
+        :timeToRead="node.timeToRead" 
+        :description="node.description"
+        :date="node.date"
+      />
+      <g-link class="see-more-link" to="/articles">See More Articles</g-link>
     </div>
   </Layout>
 </template>
