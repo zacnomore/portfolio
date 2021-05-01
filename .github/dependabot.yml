@@ -1,0 +1,24 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: webpack
+    versions:
+    - 5.17.0
+    - 5.19.0
+    - 5.21.2
+    - 5.22.0
+    - 5.23.0
+    - 5.24.2
+    - 5.24.4
+    - 5.25.1
+    - 5.27.1
+  - dependency-name: sass-loader
+    versions:
+    - 10.1.1
+    - 11.0.0
